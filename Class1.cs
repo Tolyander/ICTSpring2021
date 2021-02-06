@@ -1,4 +1,5 @@
-﻿public class Solution
+﻿
+public class Class1
 {
     public int[] RunningSum(int[] nums)
     {
@@ -11,4 +12,5 @@
         }
         return res;
     }
+    
 }
