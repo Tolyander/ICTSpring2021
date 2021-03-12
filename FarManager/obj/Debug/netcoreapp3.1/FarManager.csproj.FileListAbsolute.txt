@@ -1,0 +1,12 @@
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\FarManager.exe
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\FarManager.deps.json
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\FarManager.runtimeconfig.json
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\FarManager.runtimeconfig.dev.json
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\FarManager.dll
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\FarManager.pdb
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\FarManager.AssemblyInfoInputs.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\FarManager.AssemblyInfo.cs
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\FarManager.csproj.CoreCompileInputs.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\FarManager.dll
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\FarManager.pdb
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\FarManager.genruntimeconfig.cache

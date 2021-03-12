@@ -1,0 +1,13 @@
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\Example2.exe
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\Example2.deps.json
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\Example2.runtimeconfig.json
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\Example2.runtimeconfig.dev.json
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\Example2.dll
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\bin\Debug\netcoreapp3.1\Example2.pdb
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\Example2.AssemblyInfoInputs.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\Example2.AssemblyInfo.cs
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\Example2.csproj.CoreCompileInputs.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\Example2.dll
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\Example2.pdb
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\Example2.genruntimeconfig.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Example2\obj\Debug\netcoreapp3.1\Example2.csprojAssemblyReference.cache

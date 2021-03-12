@@ -1,0 +1,15 @@
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.exe
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.deps.json
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.json
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.runtimeconfig.dev.json
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.dll
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\bin\Debug\netcoreapp3.1\SnakeGame.pdb
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csprojAssemblyReference.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfoInputs.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.AssemblyInfo.cs
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.csproj.CoreCompileInputs.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.dll
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.pdb
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\obj\Debug\netcoreapp3.1\SnakeGame.genruntimeconfig.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\bin\Debug\netcoreapp3.1\Levels\Level1.txt
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\SnakeGame\bin\Debug\netcoreapp3.1\Levels\Level2.txt
