@@ -57,3 +57,5 @@ C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Week12\Example2\bin\Debug\System.Num
 C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Week12\Example2\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Week12\Example2\obj\Debug\Example2.csproj.CopyComplete
 C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Week12\Example2\obj\Debug\Example2.ContactUpdateForm.resources
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Example2\obj\Debug\Example2.exe
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Example2\obj\Debug\Example2.pdb

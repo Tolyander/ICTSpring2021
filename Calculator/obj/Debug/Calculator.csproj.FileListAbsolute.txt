@@ -8,3 +8,13 @@ C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Solution1\Calculator1\obj\Debug\Calc
 C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Solution1\Calculator1\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
 C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Solution1\Calculator1\obj\Debug\Calculator1.exe
 C:\Users\ernaz\Desktop\univer\4_semestr\ICT\Solution1\Calculator1\obj\Debug\Calculator1.pdb
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Calculator\bin\Debug\Calculator1.exe.config
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Calculator\bin\Debug\Calculator1.exe
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Calculator\bin\Debug\Calculator1.pdb
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Calculator\obj\Debug\Calculator1.Form1.resources
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Calculator\obj\Debug\Calculator1.Properties.Resources.resources
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Calculator\obj\Debug\Calculator.csproj.CoreCompileInputs.cache
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Calculator\obj\Debug\Calculator1.exe
+C:\Users\ernaz\Desktop\univer\4_semestr\ICT\ICTSpring2021\Calculator\obj\Debug\Calculator1.pdb
