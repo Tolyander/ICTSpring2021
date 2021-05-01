@@ -14,17 +14,25 @@ namespace Paint
     {
         Line,
         Rectangle,
-        Pen
+        Pen,
+        Eraser,
+        Circle,
+        Clear,
+        SlowFill,
+        Fill,
+        Pipette
     }
     public partial class Form1 : Form
     {
         Bitmap bitmap = default(Bitmap);
         Graphics graphics = default(Graphics);
         Pen pen = new Pen(Color.Black);
+        Pen eraser = new Pen(Color.White, 10);
+        Color color = default(Color);
         Point prevPoint = default(Point);
         Point currentPoint = default(Point);
         bool isMousePressed = false;
-        Tool currentTool = Tool.Pen;
+        Tool currentTool = Tool.Line;
 
 
         public Form1()
@@ -35,8 +43,9 @@ namespace Paint
             graphics.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
             graphics.CompositingQuality = System.Drawing.Drawing2D.CompositingQuality.HighQuality;
            
-            graphics.Clear(Color.White);
+            
             pictureBox1.Image = bitmap;
+            graphics.Clear(Color.White);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -71,6 +80,14 @@ namespace Paint
                         currentPoint = e.Location;
                         graphics.DrawLine(pen, prevPoint, currentPoint);
                         break;
+                    case Tool.Eraser:
+                        prevPoint = currentPoint;
+                        currentPoint = e.Location;
+                        graphics.DrawLine(eraser, prevPoint, currentPoint);
+                        break;
+                    case Tool.Circle:
+                        currentPoint = e.Location;
+                        break;
                     default:
                         break;
                 }
@@ -102,6 +119,29 @@ namespace Paint
                     break;
                 case Tool.Pen:
                     break;
+                case Tool.Circle:
+                    graphics.DrawEllipse(pen, GetMRectangle(prevPoint, currentPoint));
+                    break;
+                case Tool.SlowFill:
+                    currentPoint = e.Location;
+                    bitmap = Utils.Fill(bitmap, currentPoint, bitmap.GetPixel(e.X, e.Y), pen.Color);
+                    graphics = Graphics.FromImage(bitmap);
+                    pictureBox1.Image = bitmap;
+                    pictureBox1.Refresh();
+                    break;
+                case Tool.Fill:
+                    MapFill mf = new MapFill();
+                    mf.Fill(graphics, currentPoint, pen.Color, ref bitmap);
+                    graphics = Graphics.FromImage(bitmap);
+                    pictureBox1.Image = bitmap;
+                    pictureBox1.Refresh();
+                    break;
+                case Tool.Pipette:
+                    currentPoint = e.Location;
+                    Color pixelColor = bitmap.GetPixel(currentPoint.X, currentPoint.Y);
+                    pen.Color = pixelColor;
+                    /*pictureBox1.Refresh();*/
+                    break;
                 default:
                     break;
             }
@@ -121,6 +161,9 @@ namespace Paint
                     e.Graphics.DrawRectangle(pen, GetMRectangle(prevPoint, currentPoint));
                     break;
                 case Tool.Pen:
+                    break;
+                case Tool.Circle:
+                    e.Graphics.DrawEllipse(pen, GetMRectangle(prevPoint, currentPoint));
                     break;
                 default:
                     break;
@@ -149,12 +192,92 @@ namespace Paint
 
         private void открытьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("test1");
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                bitmap = Bitmap.FromFile(openFileDialog1.FileName) as Bitmap;
+                pictureBox1.Image = bitmap;
+                graphics = Graphics.FromImage(bitmap);
+            }
         }
 
         private void сохранитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("test2");
+            saveFileDialog1.Filter = "JPeg Image|*.jpg|Bitmap Image|*.bmp|Gif Image|*.gif";
+            saveFileDialog1.Title = "Save an Image File";
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                // Saves the Image via a FileStream created by the OpenFile method.
+                System.IO.FileStream fs =
+                    (System.IO.FileStream)saveFileDialog1.OpenFile();
+                // Saves the Image in the appropriate ImageFormat based upon the
+                // File type selected in the dialog box.
+                // NOTE that the FilterIndex property is one-based.
+                switch (saveFileDialog1.FilterIndex)
+                {
+                    case 1:
+                        bitmap.Save(fs,
+                          System.Drawing.Imaging.ImageFormat.Jpeg);
+                        break;
+
+                    case 2:
+                        bitmap.Save(fs,
+                          System.Drawing.Imaging.ImageFormat.Bmp);
+                        break;
+
+                    case 3:
+                        bitmap.Save(fs,
+                          System.Drawing.Imaging.ImageFormat.Gif);
+                        break;
+                }
+
+                fs.Close();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            currentTool = Tool.Eraser;
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            currentTool = Tool.Circle;
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            graphics.Clear(Color.White);
+            pictureBox1.Refresh();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DialogResult colorResult = colorDialog1.ShowDialog();
+            if (colorResult == DialogResult.OK)
+            {
+                color = colorDialog1.Color;
+                pen.Color = color;
+            }
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            pen.Width = float.Parse(numericUpDown1.Value.ToString());
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            currentTool = Tool.SlowFill;
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+            currentTool = Tool.Fill;
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            currentTool = Tool.Pipette;
         }
     }
 }

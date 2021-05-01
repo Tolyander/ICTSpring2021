@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
-namespace Calculator
+namespace Calculator1
 {
 
     delegate void DisplayMessage(string text);
@@ -19,13 +20,15 @@ namespace Calculator
         string[] nonZeroDigit = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         string[] digit = { "0", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         string[] zero = { "0" };
-        string[] operation = { "+" };
+        string[] operation = { "+", "-", "*", "/", "^"};
         string[] equal = { "=" };
+        string[] separator = { "," };
 
         enum State
         {
             Zero,
             AccumulateDigits,
+            AccumulateDigitsSeparator,
             ComputePending,
             Compute,
         }
@@ -44,13 +47,27 @@ namespace Calculator
                 case State.AccumulateDigits:
                     ProcessAccumulateDigits(message, false);
                     break;
+                case State.AccumulateDigitsSeparator:
+                    ProcessAccumulateDigitsSeparator(message, false);
+                    break;
                 case State.ComputePending:
                     ProcessComputePending(message, false);
                     break;
                 case State.Compute:
+                    ProcessCompute(message, false);
                     break;
                 default:
                     break;
+            }
+
+            if (message == "C")
+            {
+                currentState = State.Zero;
+                previousNumber = "";
+                currentNumber = "";
+                currentOperation = "";
+                displayMessage("0");
+                return; 
             }
         }
 
@@ -99,9 +116,57 @@ namespace Calculator
                 else if (equal.Contains(msg))
                 {
                     ProcessCompute(msg, true);
+                } 
+                else if (separator.Contains(msg))
+                {
+                    ProcessAccumulateDigitsSeparator(msg, true);
                 }
             }
 
+        }
+
+        void ProcessAccumulateDigitsSeparator(string msg, bool income)
+        {
+            if (income)
+            {
+                currentState = State.AccumulateDigitsSeparator;
+                if (separator.Contains(msg))
+                {
+                    /*if (currentNumber == "")
+                    {
+                        currentNumber = previousNumber + msg;
+                    }
+                    else
+                    {*/
+                    currentNumber += msg;
+                    //}
+
+                }
+                else if (digit.Contains(msg))
+                {
+                    currentNumber += msg;
+                }
+                displayMessage(currentNumber);
+            }
+            else
+            {
+                if (digit.Contains(msg))
+                {
+                    ProcessAccumulateDigitsSeparator(msg, true);
+                }
+                else if (operation.Contains(msg))
+                {
+                    ProcessComputePending(msg, true);
+                }
+                else if (equal.Contains(msg))
+                {
+                    ProcessCompute(msg, true);
+                }
+/*                else if (separator.Contains(msg))
+                {
+                    ProcessAccumulateDigitsSeparator(msg, true);
+                }*/
+            }
         }
 
         void ProcessComputePending(string msg, bool income)
@@ -131,20 +196,52 @@ namespace Calculator
                 double a = double.Parse(previousNumber);
                 double b = double.Parse(currentNumber);
 
+
                 if (currentOperation == "+")
                 {
                     currentNumber = (a + b).ToString();
-                }
+                } else if (currentOperation == "-")
+                {
+                    currentNumber = (a - b).ToString();
+                } else if (currentOperation == "*")
+                {
+                    currentNumber = (a * b).ToString();
+                } else if (currentOperation == "/")
+                {
+                    currentNumber = (a / b).ToString();
+                } else if (currentOperation == "^")
+                {
+                    currentNumber = Math.Pow(a, b).ToString();
+                } 
 
                 previousNumber = currentNumber;
 
                 displayMessage(currentNumber);
 
-                currentNumber = "";
+                //currentNumber = "";
             }
             else
             {
-
+                if (nonZeroDigit.Contains(msg))
+                {
+                    currentNumber = "";
+                    ProcessAccumulateDigits(msg, true);
+                }
+                else if (operation.Contains(msg))
+                {
+                    ProcessComputePending(msg, true);
+                }
+                else if (zero.Contains(msg))
+                {
+                    currentNumber = "";
+                    displayMessage("0");
+                    ProcessZeroState(msg, true);
+                }
+                else if (separator.Contains(msg))
+                {
+                    currentNumber = "0";
+                    ProcessAccumulateDigitsSeparator(msg, true);
+                }
             }
         }
     }

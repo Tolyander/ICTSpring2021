@@ -8,19 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Calculator
+namespace Calculator1
 {
     public partial class Form1 : Form
     {
         Brain brain;
         public Form1()
-        { 
-
+        {
             InitializeComponent();
             DisplayMessage displayMessage = new DisplayMessage(SetDisplayMessage);
             brain = new Brain(displayMessage);
         }
-
         void SetDisplayMessage(string text)
         {
             textBox1.Text = text;
@@ -31,11 +29,5 @@ namespace Calculator
             Button btn = sender as Button;
             brain.ProcessSignal(btn.Text);
         }
-
-        private void button10_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Hello2");
-        }
-
     }
 }
